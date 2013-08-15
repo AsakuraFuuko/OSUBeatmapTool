@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\AppIcon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -53,6 +56,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Dictionary1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Window\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -61,6 +68,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\TreeItem.cs" />
     <Compile Include="Window\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -92,6 +100,32 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\local.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AppIcon.ico" />
+    <Resource Include="Images\browse.png" />
+    <Resource Include="Images\browser.png" />
+    <Resource Include="Images\clear.png" />
+    <Resource Include="Images\download.png" />
+    <Resource Include="Images\file.png" />
+    <Resource Include="Images\loading.gif" />
+    <Resource Include="Images\login.png" />
+    <Resource Include="Images\logout.png" />
+    <Resource Include="Images\none.jpg" />
+    <Resource Include="Images\normal.png" />
+    <Resource Include="Images\option.png" />
+    <Resource Include="Images\osu.png" />
+    <Resource Include="Images\osuopen.png" />
+    <Resource Include="Images\osz.png" />
+    <Resource Include="Images\pause.png" />
+    <Resource Include="Images\paused.png" />
+    <Resource Include="Images\refresh.png" />
+    <Resource Include="Images\restore.png" />
+    <Resource Include="Images\resume.png" />
+    <Resource Include="Images\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
