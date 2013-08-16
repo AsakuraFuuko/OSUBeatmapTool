@@ -1,7 +1,8 @@
-﻿using OSUTool.Model;
+﻿using OSUBeatmapTool.Lib;
+using OSUBeatmapTool.Model;
 using System.Windows;
 
-namespace OSUTool
+namespace OSUBeatmapTool
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
@@ -13,6 +14,7 @@ namespace OSUTool
             InitializeComponent();
             InitTree();
             InitBMPList();
+            Log.WriteLog(LogFile.SQL,"二手");
         }
 
         public void InitTree()

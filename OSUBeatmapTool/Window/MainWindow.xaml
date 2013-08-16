@@ -1,8 +1,8 @@
-﻿<Window x:Class="OSUTool.MainWindow"
+﻿<Window x:Class="OSUBeatmapTool.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:model="clr-namespace:OSUTool.Model"
-        Title="OSU Beatmap Tool" Height="380" Width="600" WindowStartupLocation="CenterScreen" MinWidth="600" MinHeight="380" Icon="/OSUTool;component/Images/AppIcon.ico">
+        xmlns:model="clr-namespace:OSUBeatmapTool.Model"
+        Title="OSU Beatmap Tool" Height="380" Width="600" WindowStartupLocation="CenterScreen" MinWidth="600" MinHeight="380" Icon="/OSUBeatmapTool;component/Images/AppIcon.ico">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

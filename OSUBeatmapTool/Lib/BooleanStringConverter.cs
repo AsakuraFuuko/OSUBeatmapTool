@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace OSUTool.Lib
+namespace OSUBeatmapTool.Lib
 {
     public class BooleanStringConverter : IValueConverter
     {

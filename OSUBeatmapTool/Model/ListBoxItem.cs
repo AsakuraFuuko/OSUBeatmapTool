@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 
-namespace OSUTool.Model
+namespace OSUBeatmapTool.Model
 {
     internal class ListBoxItem
     {
