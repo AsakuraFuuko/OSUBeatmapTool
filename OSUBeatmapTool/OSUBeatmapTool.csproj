@@ -41,6 +41,10 @@
     <StartupObject>OSUBeatmapTool.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>JSON\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.SQLite">
@@ -153,6 +157,9 @@
     <Resource Include="Images\manager.png" />
     <Resource Include="Images\downed.png" />
     <Resource Include="Images\downing.png" />
+    <Content Include="JSON\Newtonsoft.Json.dll" />
+    <Content Include="JSON\Newtonsoft.Json.pdb" />
+    <Resource Include="JSON\Newtonsoft.Json.xml" />
     <Content Include="Sqlite\Installer.exe" />
     <Content Include="Sqlite\Installer.pdb" />
     <Content Include="Sqlite\SQLite.Designer.dll" />
