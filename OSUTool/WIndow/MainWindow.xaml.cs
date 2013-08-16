@@ -12,6 +12,7 @@ namespace OSUTool
         {
             InitializeComponent();
             InitTree();
+            InitBMPList();
         }
 
         public void InitTree()
@@ -73,6 +74,68 @@ namespace OSUTool
 
             // 把数据绑定到控件
             treeViewMenu.ItemsSource = tree.children;
+        }
+
+        public void InitBMPList()
+        {
+            ListBoxItem lbi = new ListBoxItem();
+            lbi.LVDatas.Add(new ListBoxItem
+            {
+                id = "82258",
+                title = "Xhroria",
+                bmpic = "../Images/82258.png",
+                artist = "An",
+                from = "BMS",
+                isRanked = false,
+                mapper = "Cherry Blossom",
+                date = "2013.08.16"
+            });
+            lbi.LVDatas.Add(new ListBoxItem
+            {
+                id = "82258",
+                title = "Xhroria",
+                bmpic = "../Images/82258.png",
+                artist = "An",
+                from = "BMS",
+                isRanked = false,
+                mapper = "Cherry Blossom",
+                date = "2013.08.16"
+            });
+            lbi.LVDatas.Add(new ListBoxItem
+            {
+                id = "82258",
+                title = "Xhroria",
+                bmpic = "../Images/82258.png",
+                artist = "An",
+                from = "BMS",
+                isRanked = false,
+                mapper = "Cherry Blossom",
+                date = "2013.08.16"
+            });
+            lbi.LVDatas.Add(new ListBoxItem
+            {
+                id = "82258",
+                title = "Xhroria",
+                bmpic = "../Images/82258.png",
+                artist = "An",
+                from = "BMS",
+                isRanked = false,
+                mapper = "Cherry Blossom",
+                date = "2013.08.16"
+            });
+            lbi.LVDatas.Add(new ListBoxItem
+            {
+                id = "82258",
+                title = "Xhroria",
+                bmpic = "../Images/82258.png",
+                artist = "An",
+                from = "BMS",
+                isRanked = false,
+                mapper = "Cherry Blossom",
+                date = "2013.08.16"
+            });
+
+            beatmapList.ItemsSource = lbi.LVDatas;
         }
     }
 }
