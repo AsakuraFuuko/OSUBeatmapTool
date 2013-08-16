@@ -79,7 +79,8 @@
     <Compile Include="Lib\Log.cs" />
     <Compile Include="Lib\LogManager.cs" />
     <Compile Include="Lib\SqliteHelper.cs" />
-    <Compile Include="Model\ListBoxItem.cs" />
+    <Compile Include="Model\Beatmap.cs" />
+    <Compile Include="Model\BeatmapListItem.cs" />
     <Compile Include="Model\TreeItem.cs" />
     <Compile Include="Window\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -146,6 +147,12 @@
     <Resource Include="Images\82258.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\mirror.png" />
+    <Resource Include="Images\played.png" />
+    <Resource Include="Images\lib.png" />
+    <Resource Include="Images\manager.png" />
+    <Resource Include="Images\downed.png" />
+    <Resource Include="Images\downing.png" />
     <Content Include="Sqlite\Installer.exe" />
     <Content Include="Sqlite\Installer.pdb" />
     <Content Include="Sqlite\SQLite.Designer.dll" />

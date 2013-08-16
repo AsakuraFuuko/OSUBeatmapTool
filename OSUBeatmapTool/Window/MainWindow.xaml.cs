@@ -1,6 +1,7 @@
 ﻿using OSUBeatmapTool.Lib;
 using OSUBeatmapTool.Model;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace OSUBeatmapTool
 {
@@ -14,7 +15,7 @@ namespace OSUBeatmapTool
             InitializeComponent();
             InitTree();
             InitBMPList();
-            Log.WriteLog(LogFile.SQL,"二手");
+            Log.WriteLog(LogFile.SQL, "二手");
         }
 
         public void InitTree()
@@ -35,23 +36,28 @@ namespace OSUBeatmapTool
             TreeItem root = new TreeItem();
             root.text = "Osu Beatmap Tool";
             root.itemIcon = "../Images/download.png";
+            root.itemName = ItemNameEnum.Root;
             // 把根节点加进来
             tree.children.Add(root);
 
             TreeItem lib = new TreeItem();
-            lib.text = "库";
-            lib.itemIcon = "../Images/download.png";
+            lib.text = "Beatmap库";
+            lib.itemIcon = "../Images/lib.png";
+            lib.itemName = ItemNameEnum.Library;
             root.children.Add(lib);
 
             TreeItem loca = new TreeItem();
             loca.text = "本地Beatmap";
             loca.itemIcon = "../Images/local.png";
+            loca.itemName = ItemNameEnum.LocalBM;
             TreeItem mirr = new TreeItem();
             mirr.text = "Beatmap镜像";
-            mirr.itemIcon = "../Images/download.png";
+            mirr.itemIcon = "../Images/mirror.png";
+            mirr.itemName = ItemNameEnum.MirrorBM;
             TreeItem played = new TreeItem();
             played.text = "已玩过的Beatmap";
-            played.itemIcon = "../Images/download.png";
+            played.itemIcon = "../Images/played.png";
+            played.itemName = ItemNameEnum.PlayedBM;
 
             lib.children.Add(loca);
             lib.children.Add(mirr);
@@ -59,17 +65,20 @@ namespace OSUBeatmapTool
 
             // 给根节点加一些子节点
             TreeItem manage = new TreeItem();
-            manage.text = "管理";
-            manage.itemIcon = "../Images/download.png";
+            manage.text = "下载管理";
+            manage.itemIcon = "../Images/manager.png";
+            manage.itemName = ItemNameEnum.Manager;
             root.children.Add(manage);
 
             // 给湖北下加几个城市
             TreeItem downing = new TreeItem();
             downing.text = "正在下载";
-            downing.itemIcon = "../Images/download.png";
+            downing.itemIcon = "../Images/downing.png";
+            downing.itemName = ItemNameEnum.Downloading;
             TreeItem downed = new TreeItem();
             downed.text = "已下载";
-            downed.itemIcon = "../Images/download.png";
+            downed.itemIcon = "../Images/downed.png";
+            downed.itemName = ItemNameEnum.Downloaded;
 
             manage.children.Add(downing);
             manage.children.Add(downed);
@@ -80,64 +89,52 @@ namespace OSUBeatmapTool
 
         public void InitBMPList()
         {
-            ListBoxItem lbi = new ListBoxItem();
-            lbi.LVDatas.Add(new ListBoxItem
+            BeatmapListItem lbi = new BeatmapListItem();
+            lbi.LVDatas.Add(new Beatmap
             {
                 id = "82258",
                 title = "Xhroria",
-                bmpic = "../Images/82258.png",
+                thumbnail = "../Images/82258.png",
                 artist = "An",
-                from = "BMS",
-                isRanked = false,
-                mapper = "Cherry Blossom",
+                source = "BMS",
+                status = 0,
+                creator = "Cherry Blossom",
                 date = "2013.08.16"
             });
-            lbi.LVDatas.Add(new ListBoxItem
+            
+            beatmapList.ItemsSource = lbi.LVDatas;
+        }
+
+        public void InitBMPList1()
+        {
+            BeatmapListItem lbi = new BeatmapListItem();
+            lbi.LVDatas.Add(new Beatmap
             {
                 id = "82258",
-                title = "Xhroria",
-                bmpic = "../Images/82258.png",
+                title = "测试",
+                thumbnail = "../Images/none.jpg",
                 artist = "An",
-                from = "BMS",
-                isRanked = false,
-                mapper = "Cherry Blossom",
-                date = "2013.08.16"
-            });
-            lbi.LVDatas.Add(new ListBoxItem
-            {
-                id = "82258",
-                title = "Xhroria",
-                bmpic = "../Images/82258.png",
-                artist = "An",
-                from = "BMS",
-                isRanked = false,
-                mapper = "Cherry Blossom",
-                date = "2013.08.16"
-            });
-            lbi.LVDatas.Add(new ListBoxItem
-            {
-                id = "82258",
-                title = "Xhroria",
-                bmpic = "../Images/82258.png",
-                artist = "An",
-                from = "BMS",
-                isRanked = false,
-                mapper = "Cherry Blossom",
-                date = "2013.08.16"
-            });
-            lbi.LVDatas.Add(new ListBoxItem
-            {
-                id = "82258",
-                title = "Xhroria",
-                bmpic = "../Images/82258.png",
-                artist = "An",
-                from = "BMS",
-                isRanked = false,
-                mapper = "Cherry Blossom",
+                source = "BMS",
+                status = 7,
+                creator = "Cherry Blossom",
                 date = "2013.08.16"
             });
 
             beatmapList.ItemsSource = lbi.LVDatas;
+        }
+
+        private void treeView1_Selected(object sender, RoutedEventArgs e)
+        {
+            //MessageBox.Show(((sender as TreeView).SelectedItem as TreeItem).text);
+            TreeItem ti = (sender as TreeView).SelectedItem as TreeItem;
+            switch (ti.itemName)
+            {
+                case ItemNameEnum.LocalBM: InitBMPList();
+            	break;
+                case ItemNameEnum.MirrorBM: InitBMPList1();
+                break;
+            }
+                //InitBMPList1()
         }
     }
 }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 
 namespace OSUBeatmapTool.Lib
@@ -11,14 +7,14 @@ namespace OSUBeatmapTool.Lib
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            Boolean date = (Boolean)value;
-            if (date.Equals(false))
+            //0 = Ranked, 3 = Ranked / Approved, 6 = Approved, 7 = Unranked (Others)
+            int status = (int)value;
+            switch (status)
             {
-                return "UnRanked";
-            }
-            else
-            {
-                return "Ranked";
+                case 0: return "Ranked";
+                case 3: return "Ranked / Approved";
+                case 6: return "Approved";
+                default: return "Unranked";
             }
         }
 

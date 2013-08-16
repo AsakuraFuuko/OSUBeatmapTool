@@ -25,8 +25,13 @@ namespace OSUBeatmapTool.Model
             set;
         }
 
-        // 节点其他信息
-        // ...
+        // 节点名称
+        public ItemNameEnum itemName
+        {
+            get;
+            set;
+        }
+
         // 父节点
         public TreeItem parent
         {
@@ -40,7 +45,18 @@ namespace OSUBeatmapTool.Model
             get;
             set;
         }
-
         //////////////////////////////////////////////////////////////////////////
+    }
+
+    public enum ItemNameEnum
+    {
+        Root,
+        Library,
+        LocalBM,
+        MirrorBM,
+        PlayedBM,
+        Manager,
+        Downloading,
+        Downloaded
     }
 }
